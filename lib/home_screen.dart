@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'custom_text_form.dart';
+import 'facebook/widget/custom_text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                 key: _formKey,
                   child: Column(
                     children: [
-                      CustomTextForm(lableText: 'Email', onSaved: (value){email = value;},
+                      CustomTextField(hintText: 'Email',keyboardType: TextInputType.emailAddress, onSaved: (value){email = value;},
                           validator:
                       (text){
                     if(text == null || text.isEmpty){
