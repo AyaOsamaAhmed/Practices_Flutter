@@ -5,9 +5,22 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyActions: false,
+        leading: Row(
+          children: [
+            GestureDetector(onTap:(){
+              Navigator.pop(context);
+            },
+                child: Icon(Icons.backup))
+          ],
+        ),
+      ),
       body: Center(
-        child: Text('home'),
+        child: Text('Home'),
       ),
     );
   }

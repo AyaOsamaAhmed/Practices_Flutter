@@ -22,7 +22,8 @@ class ForgetPasswordScreen extends StatelessWidget {
             CustomLogo(),
             CustomTextField(hintText: 'Enter Mobile Or Email Address', keyboardType: TextInputType.emailAddress),
             CustomElevatedButton(text: 'Send Reset Email', bgColor: Colors.blue, onPressed: (){
-              NavigatorHelper.route(context: context, routeName: 'login');
+           //   NavigatorHelper.route(context: context, routeName: 'login');
+              Navigator.pushNamed(context, 'login' , arguments: 'email');
             },)
 
           ],

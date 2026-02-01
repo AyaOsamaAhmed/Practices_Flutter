@@ -1,7 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dynamic_drawer_view.dart';
-
-
+import 'package:untitled/sharedPrefrences/home.dart';
 void main (){
   runApp(Application());
 }
@@ -13,7 +12,6 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DynamicDrawerView()//DrawerView()//NavHomeScreen(),
+      home: Home(),
     );}
-
 }

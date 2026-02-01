@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/facebook/screens/home_screen.dart';
 import 'package:untitled/navigators/profile_screen.dart';
 import 'package:untitled/navigators/settings_screen.dart';
+import 'package:untitled/navigators/user.dart';
 
 class DrawerView extends StatelessWidget {
   const DrawerView({super.key});
@@ -40,9 +41,8 @@ class DrawerView extends StatelessWidget {
             title: Text('Home'),
             trailing: Icon(CupertinoIcons.arrow_clockwise),
               onTap: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                  return HomeScreen();
-                }));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),settings: RouteSettings(arguments: User(name:'aya' , age: 30 , isActive: true))),
+                );
               },
             ),
             ListTile(leading: Icon(Icons.supervised_user_circle),
