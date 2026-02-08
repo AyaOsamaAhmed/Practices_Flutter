@@ -1,7 +1,45 @@
+import 'dart:async';
+
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveHelper {
 
+  static const String _boxName = "userBox";
+  static const String name = "name";
+  static const String phoneNumber = "phone";
+
+
+
+  static Future<void>  init()async{
+    await Hive.openBox(_boxName);
+
+  }
+
+
+   static Future<void> saveData(String key , dynamic value)async{
+
+     var box = await Hive.openBox(_boxName);
+     box.put(key, value);
+    }
+
+
+  static Future<dynamic> getData(String key , {dynamic defaultValue})async{
+
+       var box = await Hive.openBox(_boxName);
+      return box.get(key , defaultValue: defaultValue);
+  }
+
+  static Future<void> deleteData(String key )async{
+
+       var box = await Hive.openBox(_boxName);
+       box.delete(key);
+  }
+
+  static Future<void> deleteDataInBox(String key )async{
+
+       var box = await Hive.openBox(_boxName);
+       box.clear();
+  }
 
   void initHive() async{
 
