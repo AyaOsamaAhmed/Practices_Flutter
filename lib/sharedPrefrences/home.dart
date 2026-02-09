@@ -58,6 +58,7 @@ class _HomeState extends State<Home> {
   Future<void> saveData (String data ) async {
     final prefs = await SharedPreferences.getInstance();
 
+
     await prefs.setString('name', data);
   }
 
