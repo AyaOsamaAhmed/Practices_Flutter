@@ -4,11 +4,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:untitled/hive/hive_helper.dart';
 import 'package:untitled/hive/note_model.dart';
 
+import 'constant.dart';
 import 'hive_app.dart';
 import 'note_screen.dart';
-
-
- const String _boxNote = "notesBox";
 
 void main ()async{
 
@@ -16,7 +14,7 @@ void main ()async{
   await Hive.initFlutter();
   //HiveHelper.init();
   Hive.registerAdapter(NoteModelAdapter());
-  await Hive.openBox<NoteModel>(_boxNote);
+  await Hive.openBox<NoteModel>(Constant.notesBox);
   runApp(Application());
 }
 

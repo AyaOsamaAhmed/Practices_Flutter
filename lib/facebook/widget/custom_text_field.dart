@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget{
   final bool isObsecure;
   final String hintText ;
+  final int? maxLines ;
   final TextInputType? keyboardType ;
   final TextEditingController? controller;
   final String? Function(String?)? validator ;
@@ -13,7 +14,7 @@ class CustomTextField extends StatelessWidget{
     required this.hintText,
     this.validator,
    this.onSaved
-    ,required this.keyboardType, this.controller});
+    ,required this.keyboardType, this.controller , this.maxLines , });
 
 
   @override
@@ -25,7 +26,7 @@ class CustomTextField extends StatelessWidget{
           keyboardType: keyboardType,
           obscureText: isObsecure,
           minLines: 1,
-        //  maxLength: 1,
+          maxLines: maxLines,
           enabled: true,
           readOnly: false,
           decoration: InputDecoration(

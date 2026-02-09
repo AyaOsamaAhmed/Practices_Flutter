@@ -29,13 +29,13 @@ class _HiveAppState extends State<HiveApp> {
               CustomTextField(hintText: 'Enter Data ', keyboardType: TextInputType.name , controller: controllerName,),
               CustomTextField(hintText: 'Enter phone number ', keyboardType: TextInputType.number , controller: controllerPhoneNumber,),
               CustomElevatedButton(text: 'Save', bgColor: Colors.green , onPressed: (){
-                HiveHelper.saveData(HiveHelper.name , controllerName.text);
-                HiveHelper.saveData(HiveHelper.phoneNumber , controllerPhoneNumber.text);
+                HiveHelper.saveData(HiveHelper.boxName,HiveHelper.name , controllerName.text);
+                HiveHelper.saveData(HiveHelper.boxName,HiveHelper.phoneNumber , controllerPhoneNumber.text);
               },),
               SizedBox(height: 20,),
               CustomElevatedButton(text: 'Retrive', bgColor: Colors.blue , onPressed: () async {
-                name = await HiveHelper.getData(HiveHelper.name);
-                phoneNumber = await HiveHelper.getData(HiveHelper.phoneNumber);
+                name = await HiveHelper.getData(HiveHelper.boxName,HiveHelper.name);
+                phoneNumber = await HiveHelper.getData(HiveHelper.boxName,HiveHelper.phoneNumber);
 
                 setState(() {
 
@@ -44,12 +44,12 @@ class _HiveAppState extends State<HiveApp> {
               },),
               SizedBox(height: 20,),
               CustomElevatedButton(text: 'Clear Data', bgColor: Colors.red , onPressed: () async {
-                  HiveHelper.deleteData(HiveHelper.name);
-                  HiveHelper.deleteData(HiveHelper.phoneNumber);
+                  HiveHelper.deleteData(HiveHelper.boxName,HiveHelper.name);
+                  HiveHelper.deleteData(HiveHelper.boxName,HiveHelper.phoneNumber);
 
 
-                  name = await HiveHelper.getData(HiveHelper.name);
-                  phoneNumber = await HiveHelper.getData(HiveHelper.phoneNumber);
+                  name = await HiveHelper.getData(HiveHelper.boxName,HiveHelper.name);
+                  phoneNumber = await HiveHelper.getData(HiveHelper.boxName,HiveHelper.phoneNumber);
 
                   setState(() {
 
