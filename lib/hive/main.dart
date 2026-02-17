@@ -13,7 +13,7 @@ void main ()async{
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   //HiveHelper.init();
-  Hive.registerAdapter(NoteModelAdapter());
+  //Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(Constant.notesBox);
   runApp(Application());
 }

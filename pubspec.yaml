@@ -45,6 +45,10 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   http: ^1.6.0
+  dio: ^5.4.0  #Dio -- use for connection http
+  retrofit: ^4.0.1  #Retrofit  -- use for connection http
+  json_annotation: ^4.8.1  #json for Retrofit
+
 
 dev_dependencies:
   flutter_test:
@@ -58,7 +62,10 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 
   hive_generator: ^2.0.1
-  build_runner: ^2.4.8
+  build_runner: ^2.4.6
+  #retrofit_generator: ^8.0.0  #Retrofit  -- use for connection http
+  json_serializable: ^6.7.1   #json for Retrofit
+  
   #analyzer: ^10.0.2
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
