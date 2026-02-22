@@ -48,7 +48,7 @@ dependencies:
   dio: ^5.4.0  #Dio -- use for connection http
   retrofit: ^4.0.1  #Retrofit  -- use for connection http
   json_annotation: ^4.8.1  #json for Retrofit
-
+  provider: ^6.0.0
 
 dev_dependencies:
   flutter_test:
